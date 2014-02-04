@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* 
+	CSS Document -- Two column stylesheet
+	For: portfolio.html
+	
+	Author: Wyatt Hite
+	Date Created: 2/4/14
+	Date Modified:
+	
+	notes:
+		use header, #col1, and #col2.
+*/
+
+body{
+	color: white;
+	background-color: black;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	padding: 10px;
+}
+
+header{
+	background-color: #002;
+	padding: 0 5px 5px 0px;
+}
+header h1{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 2.5em;
+	font-weight: normal;
+}
+header h2{
+	font-size: 1.5em;
+	font-weight: normal
+}
+
+#col1{
+	background-color: #002;
+	width: 45%
+}
+
+
