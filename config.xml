@@ -2,6 +2,15 @@
 <widget 
   id="wyatthite.mobileapp"
   version="1.0.0" >
+  
+	<name>WH MobileApp</name>
+	
+	<description>An app for my Mobile App Development class.</description>
+	
+	<author>Wyatt Hite</author>
+	
+	<gap:platform name="ios" />
+	<gap:platform name="android" />
   	
 	<!-- icons -->
 		<icon src="icon.png" />
