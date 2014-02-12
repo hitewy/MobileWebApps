@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Accelerometer API Assignment</title>
+    <script type="text/javascript" charset="utf-8">
+		
+		//wait for device API librarys to load
+		document.addEventListener("deviceready", onDeviceReady, false);
+		
+		//device APIs are available
+		function onDeviceReady(){
+			startWatch();
+		}
+		
+		//start watching the acceleration
+		function startWatch(){
+			
+			//update acceleration every 100 milliseconds
+			var options = { frequency: 100};
+			
+			watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+		}
+		
+		//stop watching
+		function stopWatch(){
+			if(watchID){
+				navigator.accelerometer.clearWatch(watchID);
+				watchID = null;
+			}
+		}
+		
+		//onSuccess: get a snapshot of the current acceleration
+		function onSuccess(acceleration){
+			var element = document.getElementById('accelerometer');
+		}
+		
+	</script>
+</head>
+
+<body>
+	<h1>Accelerometer API Assignment</h1>
+    <div
+</body>
+</html>
