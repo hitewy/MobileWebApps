@@ -10,11 +10,13 @@
 		
 		//device APIs are available
 		function onDeviceReady(){
+			console.log('in onDeviceReady');
 			startWatch();
 		}
 		
 		//start watching the acceleration
 		function startWatch(){
+			console.log('in startWatch');
 			
 			//update acceleration every 100 milliseconds
 			var options = { frequency: 100};
@@ -24,6 +26,7 @@
 		
 		//stop watching
 		function stopWatch(){
+			console.log('in stopWatch');
 			if(watchID){
 				navigator.accelerometer.clearWatch(watchID);
 				watchID = null;
