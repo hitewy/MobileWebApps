@@ -4,19 +4,21 @@
 	<meta charset="utf-8">
 	<title>Accelerometer API Assignment</title>
     <script type="text/javascript" charset="utf-8">
+        
+        alert('script started');
 		
 		//wait for device API librarys to load
 		document.addEventListener("deviceready", onDeviceReady, false);
 		
 		//device APIs are available
 		function onDeviceReady(){
-			console.log('in onDeviceReady');
+            alert('device ready');
 			startWatch();
 		}
 		
 		//start watching the acceleration
 		function startWatch(){
-			console.log('in startWatch');
+			alert('startWatch');
 			
 			//update acceleration every 100 milliseconds
 			var options = { frequency: 100};
@@ -26,7 +28,7 @@
 		
 		//stop watching
 		function stopWatch(){
-			console.log('in stopWatch');
+			
 			if(watchID){
 				navigator.accelerometer.clearWatch(watchID);
 				watchID = null;
