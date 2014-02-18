@@ -36,7 +36,7 @@
 		
 		//onSuccess: get a snapshot of the current acceleration
 		function onSuccess(acceleration){
-			var element = document.getElementById("accelerometer");
+			var element = document.getElementById("myPlace");
 			element.innerHTML =	'Acceleration X: ' + acceleration.x + '<br />' + 
 								'Acceleration Y: ' + acceleration.y + '<br />' +
 								'Acceleration Z: ' + acceleration.z + '<br />' +
@@ -52,6 +52,6 @@
 
 <body>
 	<h1>Accelerometer API Assignment</h1>
-    <div id="accelerometer">Waiting for accelerometer . . .</div>
+    <div id="myPlace">Waiting for accelerometer . . .</div>
 </body>
 </html>
