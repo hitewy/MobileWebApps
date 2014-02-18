@@ -10,7 +10,7 @@
 	<description>An app for my Mobile App Development class.</description>
 	
 	<author>Wyatt Hite</author>
-
+	<preference name="phonegap-version" value="2.7.0" />
 
 	
 	<!-- icons -->
