@@ -5,20 +5,19 @@
 	<title>Accelerometer API Assignment</title>
     <script type="text/javascript" charset="utf-8">
         
-        alert('script started');
 		
 		//wait for device API librarys to load
 		document.addEventListener("deviceready", onDeviceReady, false);
 		
 		//device APIs are available
 		function onDeviceReady(){
-            alert('device ready');
+            console.log('in onDeviceReady()');
 			startWatch();
 		}
 		
 		//start watching the acceleration
 		function startWatch(){
-			alert('startWatch');
+			console.log('In startWatch()');
 			
 			//update acceleration every 100 milliseconds
 			var options = { frequency: 100};
