@@ -5,7 +5,7 @@
 	<title>Accelerometer API Assignment</title>
     <script type="text/javascript" charset="utf-8">
         
-		
+	/*test to see if deviceready is the problem
 		//wait for device API librarys to load
 		document.addEventListener("deviceready", onDeviceReady, false);
 		
@@ -14,7 +14,7 @@
             console.log('in onDeviceReady()');
 			startWatch();
 		}
-		
+	*/
 		//start watching the acceleration
 		function startWatch(){
 			console.log('In startWatch()');
@@ -53,5 +53,9 @@
 <body>
 	<h1>Accelerometer API Assignment</h1>
     <div id="myPlace">Waiting for accelerometer . . .</div>
+    <div id="buttons">
+    	<button onClick="startWatch();">Start</button>
+        <button onClick="stopWatch();">Stop</button>
+	</div>
 </body>
 </html>
