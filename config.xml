@@ -47,4 +47,10 @@
         <gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
     -->
 
+	<!-- access accelerometer -->
+		<feature name="Accelerometer">
+			<param name="android-package" value="org.apache.cordova.devicemotion.AccellListener" />
+			<param name="ios-package" value="CDVAccelerometer" />
+		</feature>
+		
 </widget>
