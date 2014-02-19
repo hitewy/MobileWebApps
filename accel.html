@@ -8,16 +8,12 @@
 	
 	
         
-	/*test to see if deviceready is the problem
 		//wait for device API librarys to load
-		document.addEventListener("deviceready", onDeviceReady, false);
-		
-		//device APIs are available
-		function onDeviceReady(){
+		$(document).ready(function (){
             console.log('in onDeviceReady()');
 			startWatch();
-		}
-	*/
+		});
+	
 		//start watching the acceleration
 		function startWatch(){
 			console.log('In startWatch()');
@@ -31,19 +27,30 @@
 		//stop watching
 		function stopWatch(){
 			
-			if(watchID){
+			//if(watchID){
 				navigator.accelerometer.clearWatch(watchID);
 				watchID = null;
-			}
+			//}
 		}
 		
 		//onSuccess: get a snapshot of the current acceleration
 		function onSuccess(acceleration){
+			console.log('In onSuccess()');
 			var element = document.getElementById("myPlace");
 			element.innerHTML =	'Acceleration X: ' + acceleration.x + '<br />' + 
 								'Acceleration Y: ' + acceleration.y + '<br />' +
 								'Acceleration Z: ' + acceleration.z + '<br />' +
 								'Timestamp: ' + acceleration.timestamp + '<br />';
+			
+			var positionLeft = 50 + (acceleration.x * 100);
+			var positionTop = 50 + (acceleration.y * 100);
+			//console.log("positionLeft: " + positionLeft.toFixed(0) + ", positionTop: " + positionTop.toFixed(0));
+			$('#ball').css('top', positionTop);
+			$('#ball').css('left', positionLeft);
+			/*document.getElementById("ball").style = "	position: relative;
+                             							left: " + positionLeft + "%;
+														top: " + positionTop + "%;";
+		*/
 		}
 		
 		function onError(){
@@ -60,5 +67,16 @@
     	<button onClick="startWatch();">Start</button>
         <button onClick="stopWatch();">Stop</button>
 	</div>
+    <div id="field" style="	width: device-width;
+    						height: 200px;
+                            background-color: #999">
+    	
+        <div id="ball" style="	width: 10px;
+        						height: 10px;
+                                border-radius: 5px;
+                                background-color: red;">
+        </div>                    
+    	
+    </div>
 </body>
 </html>
