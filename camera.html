@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Camera API Assignment</title>
+    <script type="text/javascript">
+		function takePicture(){
+			navigator.camera.getPicture(onSuccess, onFail, {quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+		}
+		
+		function onSuccess(imageURI){
+			var picture = document.getElementById('myPicture');
+			image.style.display='block';
+			image.src = imageURI;
+		}
+		
+		function onFail(message){
+			alert('Failed because: ' + message);
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Camera API Assignment</h1>
+    <button onclick="takePicture();">Take a Picture</button>
+   	<img id="myPicture" src="" style="display:none;"/>
+</body>
+</html>
