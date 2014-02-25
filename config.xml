@@ -50,6 +50,7 @@
 	<!-- add plugins for APIs -->
 		<gap:plugin name="org.apache.cordova.device" />
 		<gap:plugin name="org.apache.cordova.device-motion" />
+		<gap:plugin name="org.apache.cordova.camera" />
 		
 		
 	<!-- access accelerometer -->
