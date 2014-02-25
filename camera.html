@@ -3,27 +3,55 @@
 <head>
 	<meta charset="utf-8">
 	<title>Camera API Assignment</title>
+    <script src="inc/jquery.js" type="text/javaxcript"></script>
     <script type="text/javascript">
+		$( '#takePic' ).bind( 'touchstart', takePicture());
+		$( '#choosePic' ).bind( 'touchstart', choosePicture());
+		
 		function takePicture(){
 			console.log('in takePicture()');
-			navigator.Camera.getPicture(onSuccess, onFail, {quality: 50, destinationType: Camera.DestinationType.DATA_URL });
+			navigator.camera.getPicture(
+				function(imageData){
+					var image = document.getElementById('myPicture');
+					image.src = "data:image/jpeg;base64," + imageData;
+				},
+				function(){
+					alert('Failed because: ' + message);
+				},
+				{	quality: 50,
+					destinationType: Camera.DestinationType.DATA_URL,
+					sourceType: Camera.PictureSourceType.CAMERA
+				}
+			);
 		}
 		
-		function onSuccess(imageURI){
-			var image = document.getElementById('myPicture');
-			image.src = "data:image/jpeg;base64," + imageData;
+		function choosePicture(){
+			console.log('in choosePicture()');
+			navigator.camera.getPicture(
+				function(imageData){
+					var image = document.getElementById('myPicture');
+					image.src = "data:image/jpeg;base64," + imageData;
+				},
+				function(){
+					alert('Failed because: ' + message);
+				},
+				{	quality: 50,
+					destinationType: Camera.DestinationType.DATA_URL,
+					sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+				}
+			);
 		}
 		
-		function onFail(message){
-			alert('Failed because: ' + message);
-		}
 	</script>
 </head>
 
 <body>
 	<h1>Camera API Assignment</h1>
-    <button onclick="takePicture();">Take a Picture</button>
    	<img id="myPicture" title="myPicture" alt="myPicture" 
     src="your-image-here.jpg" style="display:block; width: device-width;"/>
+    <div id="buttons" style="position: relative; bottom: 0;">
+    	<button id="takePic">Take a Picture</button>
+    	<button id="choosePic">Choose From Library</button>
+    </div>
 </body>
 </html>
