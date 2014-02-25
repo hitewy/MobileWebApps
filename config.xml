@@ -10,7 +10,7 @@
 	<description>An app for my Mobile App Development class.</description>
 	
 	<author>Wyatt Hite</author>
-	<preference name="phonegap-version" value="2.7.0" />
+	<preference name="phonegap-version" value="3.1.0" />
 
 	
 	<!-- icons -->
@@ -49,6 +49,7 @@
 		
 	<!-- add plugins for APIs -->
 		<gap:plugin name="org.apache.cordova.device" />
+		<gap:plugin name="org.apache.cordova.device-motion" />
 		
 		
 	<!-- access accelerometer -->
