@@ -5,12 +5,13 @@
 	<title>Camera API Assignment</title>
     <script type="text/javascript">
 		function takePicture(){
-			navigator.camera.getPicture(onSuccess, onFail, {quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+			console.log('in takePicture()');
+			navigator.Camera.getPicture(onSuccess, onFail, {quality: 50, destinationType: Camera.DestinationType.DATA_URL });
 		}
 		
 		function onSuccess(imageURI){
-			var picture = document.getElementById('myPicture');
-			image.src = imageURI;
+			var image = document.getElementById('myPicture');
+			image.src = "data:image/jpeg;base64," + imageData;
 		}
 		
 		function onFail(message){
