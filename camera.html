@@ -5,9 +5,10 @@
 	<title>Camera API Assignment</title>
     <script src="inc/jquery.js" type="text/javaxcript"></script>
     <script type="text/javascript">
+	/* for mobile app touchstart-won't work on desktop
 		$( '#takePic' ).bind( 'touchstart', takePicture());
 		$( '#choosePic' ).bind( 'touchstart', choosePicture());
-		
+	*/
 		function takePicture(){
 			console.log('in takePicture()');
 			navigator.camera.getPicture(
@@ -50,8 +51,9 @@
    	<img id="myPicture" title="myPicture" alt="myPicture" 
     src="your-image-here.jpg" style="display:block; width: device-width;"/>
     <div id="buttons" style="position: relative; bottom: 0;">
-    	<button id="takePic">Take a Picture</button>
-    	<button id="choosePic">Choose From Library</button>
+    <!-- onClick is for desktop use, touchstart used for mobile -->
+    	<button id="takePic" onClick="takePicture();">Take a Picture</button>
+    	<button id="choosePic" onClick="choosePicture();">Choose From Library</button>
     </div>
 </body>
 </html>
